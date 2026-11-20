@@ -1,0 +1,656 @@
+```html
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्रिया ऑटोमोबाइल एंड टूर एंड ट्रैवल्स | हल्द्वानी, उत्तराखंड</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans Devanagari for crisp Hindi typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans Devanagari"', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0a192f',
+                            800: '#112240',
+                            700: '#1d3557',
+                        },
+                        brandOrange: {
+                            500: '#f97316',
+                            600: '#ea580c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        /* Custom subtle pulse animation for floating WhatsApp button */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .whatsapp-pulse {
+            animation: pulse-ring 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brandOrange-500 selection:text-white">
+
+    <!-- Top Quick Contact Bar -->
+    <div class="bg-navy-900 text-slate-200 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brandOrange-500"></i>
+                <span>हल्द्वानी, जिला नैनीताल, उत्तराखंड</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="hidden sm:inline text-emerald-400 font-medium">
+                    <i class="fa-solid fa-clock mr-1"></i> 24/7 कार रेंटल उपलब्ध
+                </span>
+                <a href="tel:+919027722102" class="font-semibold text-white hover:text-brandOrange-500 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone-volume text-brandOrange-500"></i>
+                    <span>9027722102</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Brand Logo & Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-navy-900 to-navy-700 flex items-center justify-center text-brandOrange-500 shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-car-side text-lg sm:text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block text-base sm:text-xl font-extrabold text-navy-900 leading-tight">
+                            प्रिया ऑटोमोबाइल
+                        </span>
+                        <span class="block text-xs sm:text-sm font-semibold text-brandOrange-600">
+                            एंड टूर एंड ट्रैवल्स
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-slate-700">
+                    <a href="#home" class="hover:text-brandOrange-600 transition">मुख्य पृष्ठ</a>
+                    <a href="#services" class="hover:text-brandOrange-600 transition">हमारी सेवाएं</a>
+                    <a href="#destinations" class="hover:text-brandOrange-600 transition">प्रमुख यात्रा स्थल</a>
+                    <a href="#why-us" class="hover:text-brandOrange-600 transition">विशेषताएं</a>
+                    <a href="#booking" class="hover:text-brandOrange-600 transition">बुकिंग / पूछताछ</a>
+                </nav>
+
+                <!-- Header CTA & Mobile Menu Button -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="tel:+919027722102" class="hidden sm:inline-flex items-center gap-2 bg-brandOrange-500 hover:bg-brandOrange-600 text-white font-semibold px-4 py-2.5 rounded-xl shadow-sm transition">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>कॉल करें</span>
+                    </a>
+                    <button id="mobile-menu-btn" aria-label="मेनू खोलें" class="md:hidden p-2.5 rounded-xl text-navy-900 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-5 space-y-2 shadow-lg">
+            <a href="#home" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-medium text-slate-700 hover:bg-orange-50 hover:text-brandOrange-600">मुख्य पृष्ठ</a>
+            <a href="#services" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-medium text-slate-700 hover:bg-orange-50 hover:text-brandOrange-600">हमारी सेवाएं</a>
+            <a href="#destinations" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-medium text-slate-700 hover:bg-orange-50 hover:text-brandOrange-600">प्रमुख यात्रा स्थल</a>
+            <a href="#why-us" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-medium text-slate-700 hover:bg-orange-50 hover:text-brandOrange-600">विशेषताएं</a>
+            <a href="#booking" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-medium text-slate-700 hover:bg-orange-50 hover:text-brandOrange-600">बुकिंग / पूछताछ</a>
+            <div class="pt-2 grid grid-cols-2 gap-2">
+                <a href="tel:+919027722102" class="flex items-center justify-center gap-2 bg-navy-900 text-white py-2.5 rounded-xl font-semibold text-sm">
+                    <i class="fa-solid fa-phone"></i> कॉल करें
+                </a>
+                <a href="https://wa.me/919027722102?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF%E0%A4%BE%20%E0%A4%91%E0%A4%9F%E0%A5%8B%E0%A4%AE%E0%A5%8B%E0%A4%AC%E0%A4%BE%E0%A4%87%E0%A4%B2%20%E0%A4%8F%E0%A4%82%E0%A4%A1%20%E0%A4%9F%E0%A5%82%E0%A4%B0%20%E0%A4%8F%E0%A4%82%E0%A4%A1%20%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%88%E0%A4%B5%E0%A4%B2%E0%A5%8D%E0%A4%B8%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%86%E0%A4%AA%E0%A4%95%E0%A5%80%20%E0%A4%B8%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%93%E0%A4%82%20%E0%A4%95%E0%A5%87%20%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F%E0%A5%A4" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-emerald-600 text-white py-2.5 rounded-xl font-semibold text-sm">
+                    <i class="fa-brands fa-whatsapp text-base"></i> व्हाट्सएप
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-slate-900 text-white overflow-hidden">
+        <!-- Decorative Background Shapes -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brandOrange-500 blur-3xl"></div>
+            <div class="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-blue-500 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-brandOrange-400 text-xs sm:text-sm font-semibold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>हल्द्वानी का विश्वसनीय ऑटोमोबाइल और ट्रैवल केंद्र</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+                        प्रिया ऑटोमोबाइल <br class="hidden sm:inline">
+                        <span class="text-brandOrange-500">एंड टूर एंड ट्रैवल्स</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        हल्द्वानी, उत्तराखंड में आपकी सभी ऑटोमोबाइल और यात्रा ज़रूरतों के लिए एक ही भरोसेमंद स्थान — टू-व्हीलर सर्विसिंग, प्रीमियम कार व बाइक वॉशिंग, 24/7 कार रेंटल और मोटर इंश्योरेंस सेवाएं।
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="tel:+919027722102" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brandOrange-500 hover:bg-brandOrange-600 text-white font-bold px-7 py-4 rounded-2xl shadow-lg shadow-orange-500/25 transition transform hover:-translate-y-0.5 text-base">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>अभी कॉल करें: 9027722102</span>
+                        </a>
+                        <a href="https://wa.me/919027722102?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF%E0%A4%BE%20%E0%A4%91%E0%A4%9F%E0%A5%8B%E0%A4%AE%E0%A5%8B%E0%A4%AC%E0%A4%BE%E0%A4%87%E0%A4%B2%20%E0%A4%8F%E0%A4%82%E0%A4%A1%20%E0%A4%9F%E0%A5%82%E0%A4%B0%20%E0%A4%8F%E0%A4%82%E0%A4%A1%20%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%88%E0%A4%B5%E0%A4%B2%E0%A5%8D%E0%A4%B8%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%AC%E0%A5%81%E0%A4%95%E0%A4%BF%E0%A4%82%E0%A4%97%20%E0%A4%AF%E0%A4%BE%20%E0%A4%B8%E0%A5%87%E0%A4%B5%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F%E0%A5%A4" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-7 py-4 rounded-2xl shadow-lg shadow-emerald-600/25 transition transform hover:-translate-y-0.5 text-base">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>व्हाट्सएप पर बुकिंग करें</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlights Strip -->
+                    <div class="pt-4 grid grid-cols-3 gap-3 sm:gap-6 border-t border-white/10 text-center lg:text-left">
+                        <div>
+                            <p class="text-lg sm:text-2xl font-bold text-white">24/7</p>
+                            <p class="text-xs sm:text-sm text-slate-400">टैक्सी व कार रेंटल</p>
+                        </div>
+                        <div>
+                            <p class="text-lg sm:text-2xl font-bold text-white">100%</p>
+                            <p class="text-xs sm:text-sm text-slate-400">जेनुइन स्पेयर पार्ट्स</p>
+                        </div>
+                        <div>
+                            <p class="text-lg sm:text-2xl font-bold text-white">त्वरित</p>
+                            <p class="text-xs sm:text-sm text-slate-400">इंश्योरेंस रिन्यूअल</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Feature Card Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div>
+                                <h2 class="text-lg sm:text-xl font-bold text-white">हमारी मुख्य सेवाएं</h2>
+                                <p class="text-xs text-slate-300">हल्द्वानी एवं संपूर्ण उत्तराखंड में उपलब्ध</p>
+                            </div>
+                            <span class="w-10 h-10 rounded-full bg-brandOrange-500/20 text-brandOrange-400 flex items-center justify-center">
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </div>
+
+                        <div class="space-y-3.5">
+                            <a href="#services" class="flex items-center gap-4 p-3 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5">
+                                <div class="w-11 h-11 rounded-xl bg-orange-500/20 text-brandOrange-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-motorcycle text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm sm:text-base">टू-व्हीलर सर्विसिंग और रिपेयरिंग</h3>
+                                    <p class="text-xs text-slate-300">बाइक व स्कूटर की संपूर्ण सर्विस और पार्ट्स</p>
+                                </div>
+                            </a>
+
+                            <a href="#services" class="flex items-center gap-4 p-3 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5">
+                                <div class="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-soap text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm sm:text-base">कार वॉशिंग और क्लीनिंग</h3>
+                                    <p class="text-xs text-slate-300">फोम वॉश, प्रेशर वॉश और इंटीरियर वैक्यूम</p>
+                                </div>
+                            </a>
+
+                            <a href="#services" class="flex items-center gap-4 p-3 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-taxi text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm sm:text-base">24/7 कार रेंटल और टूर एंड ट्रैवल्स</h3>
+                                    <p class="text-xs text-slate-300">उत्तराखंड और उत्तर भारत के लिए आरामदायक कैब</p>
+                                </div>
+                            </a>
+
+                            <a href="#services" class="flex items-center gap-4 p-3 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5">
+                                <div class="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-file-shield text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm sm:text-base">मोटर इंश्योरेंस सेवाएं</h3>
+                                    <p class="text-xs text-slate-300">टू-व्हीलर व फोर-व्हीलर बीमा एवं क्लेम सहायता</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <a href="#booking" class="block w-full text-center bg-white text-navy-900 hover:bg-slate-100 font-bold py-3.5 rounded-xl transition text-sm sm:text-base">
+                            ऑनलाइन पूछताछ / बुकिंग फॉर्म भरें <i class="fa-solid fa-arrow-down ml-1.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Strictly adhering to the 4 exact services) -->
+    <section id="services" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-brandOrange-600 font-bold text-xs sm:text-sm">
+                हमारी विशेषज्ञता
+            </span>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900">
+                हमारी प्रमुख सेवाएं
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+                प्रिया ऑटोमोबाइल एंड टूर एंड ट्रैवल्स में हम उच्च गुणवत्ता, पारदर्शिता और समय पर सेवा प्रदान करने के लिए प्रतिबद्ध हैं।
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            
+            <!-- Service 1: Two-Wheeler Servicing & Repair -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div class="w-14 h-14 rounded-2xl bg-orange-50 text-brandOrange-600 flex items-center justify-center text-2xl group-hover:bg-brandOrange-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">
+                            केवल टू-व्हीलर
+                        </span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-navy-900 mb-3">
+                        टू-व्हीलर सर्विसिंग और रिपेयरिंग
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base mb-5 leading-relaxed">
+                        अनुभवी मैकेनिकों द्वारा सभी प्रकार की बाइक और स्कूटर की संपूर्ण जांच, सर्विसिंग और मरम्मत की सुविधा।
+                    </p>
+                    <ul class="space-y-2.5 text-sm sm:text-base text-slate-700 mb-6">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-brandOrange-500"></i>
+                            <span>संपूर्ण बाइक और स्कूटर सर्विसिंग</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-brandOrange-500"></i>
+                            <span>टू-व्हीलर इंजन रिपेयर और ट्यूनिंग</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-brandOrange-500"></i>
+                            <span>ऑयल चेंज, फिल्टर व ब्रेक सर्विस</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-brandOrange-500"></i>
+                            <span>जेनुइन स्पेयर पार्ट्स, बैटरी और टायर रिप्लेसमेंट</span>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="selectServiceAndScroll('टू-व्हीलर सर्विसिंग और रिपेयरिंग')" class="w-full py-3.5 px-5 rounded-xl bg-navy-900 hover:bg-brandOrange-600 text-white font-semibold transition flex items-center justify-center gap-2 text-sm sm:text-base">
+                    <span>बाइक सर्विस बुक करें</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Service 2: Car Washing & Detailing -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-2xl group-hover:bg-sky-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-spray-can-sparkles"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-semibold">
+                            कार एवं बाइक
+                        </span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-navy-900 mb-3">
+                        कार वॉशिंग और क्लीनिंग
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base mb-5 leading-relaxed">
+                        आधुनिक उपकरणों और सुरक्षित क्लीनिंग उत्पादों के साथ आपकी कार और बाइक को दें बिल्कुल नई जैसी चमक।
+                    </p>
+                    <ul class="space-y-2.5 text-sm sm:text-base text-slate-700 mb-6">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-sky-600"></i>
+                            <span>प्रीमियम स्नो फोम वॉश (Foam Wash)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-sky-600"></i>
+                            <span>डीप इंटीरियर वैक्यूमिंग और डैशबोर्ड क्लीनिंग</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-sky-600"></i>
+                            <span>कार और बाइक के लिए हाई-प्रेशर वॉशिंग</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-sky-600"></i>
+                            <span>टायर पॉलिश और एक्सटीरियर शाइन फिनिश</span>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="selectServiceAndScroll('कार वॉशिंग और क्लीनिंग')" class="w-full py-3.5 px-5 rounded-xl bg-navy-900 hover:bg-sky-600 text-white font-semibold transition flex items-center justify-center gap-2 text-sm sm:text-base">
+                    <span>वॉशिंग अपॉइंटमेंट लें</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Service 3: 24/7 Car Rental & Tour and Travels -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl group-hover:bg-emerald-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold">
+                            24/7 उपलब्ध
+                        </span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-navy-900 mb-3">
+                        24/7 कार रेंटल और टूर एंड ट्रैवल्स
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base mb-5 leading-relaxed">
+                        हल्द्वानी से लोकल यात्रा, आउटस्टेशन कैब और उत्तराखंड व उत्तर भारत के दर्शनीय स्थलों के लिए सुरक्षित व आरामदायक यात्रा।
+                    </p>
+                    <ul class="space-y-2.5 text-sm sm:text-base text-slate-700 mb-6">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>24/7 आउटस्टेशन कैब और लोकल टैक्सी सेवा</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>उत्तराखंड व उत्तर भारत टूर पैकेज (नैनीताल, कैंची धाम, ऋषिकेश, दिल्ली आदि)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>साफ-सुथरी, एसी और आरामदायक गाड़ियां</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>पहाड़ी व मैदानी रास्तों के अनुभवी और विनम्र ड्राइवर</span>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="selectServiceAndScroll('24/7 कार रेंटल और टूर एंड ट्रैवल्स')" class="w-full py-3.5 px-5 rounded-xl bg-navy-900 hover:bg-emerald-600 text-white font-semibold transition flex items-center justify-center gap-2 text-sm sm:text-base">
+                    <span>टैक्सी / टूर बुक करें</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Service 4: Motor Insurance Services -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl group-hover:bg-amber-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-semibold">
+                            त्वरित पॉलिसी
+                        </span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-navy-900 mb-3">
+                        मोटर इंश्योरेंस सेवाएं
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base mb-5 leading-relaxed">
+                        अपने वाहन की सुरक्षा के लिए बिना किसी भागदौड़ के तुरंत नया मोटर बीमा करवाएं या पुरानी पॉलिसी रिन्यू करें।
+                    </p>
+                    <ul class="space-y-2.5 text-sm sm:text-base text-slate-700 mb-6">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-amber-600"></i>
+                            <span>टू-व्हीलर और फोर-व्हीलर का नया इंश्योरेंस</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-amber-600"></i>
+                            <span>आसान और तुरंत पॉलिसी रिन्यूअल (Renewal)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-amber-600"></i>
+                            <span>फर्स्ट पार्टी (Comprehensive) और थर्ड पार्टी बीमा विकल्प</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-amber-600"></i>
+                            <span>इंश्योरेंस क्लेम प्रक्रिया में संपूर्ण मार्गदर्शन एवं सहायता</span>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="selectServiceAndScroll('मोटर इंश्योरेंस सेवाएं')" class="w-full py-3.5 px-5 rounded-xl bg-navy-900 hover:bg-amber-600 text-white font-semibold transition flex items-center justify-center gap-2 text-sm sm:text-base">
+                    <span>इंश्योरेंस पूछताछ करें</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Popular Tour Destinations Section -->
+    <section id="destinations" class="py-16 bg-slate-100 border-y border-slate-200/80 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div class="space-y-2">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs sm:text-sm">
+                        टूर एंड ट्रैवल्स
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900">
+                        हल्द्वानी से प्रमुख यात्रा मार्ग एवं टूर पैकेज
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        पारिवारिक यात्रा, धार्मिक दर्शन या व्यावसायिक दौरे के लिए 24/7 टैक्सी बुकिंग उपलब्ध।
+                    </p>
+                </div>
+                <a href="tel:+919027722102" class="inline-flex items-center gap-2 text-brandOrange-600 font-bold hover:text-brandOrange-700 text-sm sm:text-base">
+                    <span>कस्टम टूर प्लान के लिए कॉल करें</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Destination 1 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/60 hover:shadow-md transition">
+                    <div class="w-11 h-11 rounded-xl bg-orange-100 text-brandOrange-600 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-om"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-navy-900 mb-1">कैंची धाम व अल्मोड़ा</h3>
+                    <p class="text-slate-600 text-sm mb-4">बाबा नीम करौली महाराज दर्शन, चितई गोलू देवता व जागेश्वर धाम यात्रा।</p>
+                    <button onclick="selectTourDestination('कैंची धाम / अल्मोड़ा यात्रा')" class="text-sm font-semibold text-brandOrange-600 hover:underline flex items-center gap-1">
+                        कैब बुक करें <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Destination 2 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/60 hover:shadow-md transition">
+                    <div class="w-11 h-11 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-mountain-sun"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-navy-900 mb-1">नैनीताल व भीमताल</h3>
+                    <p class="text-slate-600 text-sm mb-4">नैनी झील, भीमताल, नौकुचियाताल, मुक्तेश्वर और रानीखेत दर्शनीय स्थल।</p>
+                    <button onclick="selectTourDestination('नैनीताल / भीमताल / मुक्तेश्वर टूर')" class="text-sm font-semibold text-sky-600 hover:underline flex items-center gap-1">
+                        कैब बुक करें <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Destination 3 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/60 hover:shadow-md transition">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-navy-900 mb-1">हरिद्वार, ऋषिकेश व चारधाम</h3>
+                    <p class="text-slate-600 text-sm mb-4">गंगा आरती, ऋषिकेश, देहरादून, मसूरी और उत्तराखंड तीर्थ यात्राएं।</p>
+                    <button onclick="selectTourDestination('हरिद्वार / ऋषिकेश / उत्तराखंड टूर')" class="text-sm font-semibold text-emerald-600 hover:underline flex items-center gap-1">
+                        कैब बुक करें <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Destination 4 -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200/60 hover:shadow-md transition">
+                    <div class="w-11 h-11 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-navy-900 mb-1">दिल्ली NCR व एयरपोर्ट पिकअप</h3>
+                    <p class="text-slate-600 text-sm mb-4">हल्द्वानी से दिल्ली, IGI एयरपोर्ट, पंतनगर एयरपोर्ट और उत्तर भारत के प्रमुख शहर।</p>
+                    <button onclick="selectTourDestination('दिल्ली / एयरपोर्ट ड्रॉप या पिकअप')" class="text-sm font-semibold text-indigo-600 hover:underline flex items-center gap-1">
+                        कैब बुक करें <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-navy-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">
+                    हमें ही क्यों चुनें?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    ग्राहक संतुष्टि और भरोसेमंद सेवा ही प्रिया ऑटोमोबाइल एंड टूर एंड ट्रैवल्स की पहचान है।
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                    <div class="w-11 h-11 rounded-xl bg-brandOrange-500/20 text-brandOrange-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1.5">अनुभवी टीम</h3>
+                    <p class="text-slate-300 text-sm">कुशल टू-व्हीलर मैकेनिक और पहाड़ी मार्गों के अनुभवी ड्राइवर।</p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1.5">24/7 उपलब्धता</h3>
+                    <p class="text-slate-300 text-sm">दिन हो या रात, किसी भी समय टैक्सी व कैब बुकिंग की सुविधा।</p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1.5">जेनुइन क्वालिटी</h3>
+                    <p class="text-slate-300 text-sm">बाइक सर्विस में असली स्पेयर पार्ट्स और कार वॉशिंग में प्रीमियम उत्पाद।</p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                    <div class="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1.5">संपूर्ण सहायता</h3>
+                    <p class="text-slate-300 text-sm">इंश्योरेंस रिन्यूअल से लेकर क्लेम और यात्रा प्लानिंग तक पूरा सहयोग।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Booking / Inquiry Form & Contact Section -->
+    <section id="booking" class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
+            <!-- Left Contact Info -->
+            <div class="lg:col-span-5 space-y-6">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-brandOrange-600 font-bold text-xs sm:text-sm">
+                    संपर्क करें
+                </span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 leading-tight">
+                    आज ही अपनी सेवा बुक करें या जानकारी लें
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    बाइक सर्विसिंग, कार वॉशिंग, कैब बुकिंग या मोटर इंश्योरेंस से जुड़ी किसी भी जानकारी के लिए हमें सीधे कॉल करें या फॉर्म भरकर व्हाट्सएप पर संदेश भेजें।
+                </p>
+
+                <div class="space-y-4 pt-2">
+                    <!-- Phone Card -->
+                    <a href="tel:+919027722102" class="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-200/80 hover:border-brandOrange-500 transition">
+                        <div class="w-12 h-12 rounded-xl bg-brandOrange-500 text-white flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-500">सीधे कॉल करें</p>
+                            <p class="text-lg sm:text-xl font-extrabold text-navy-900">+91 9027722102</p>
+                        </div>
+                    </a>
+
+                    <!-- WhatsApp Card -->
+                    <a href="https://wa.me/919027722102?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF%E0%A4%BE%20%E0%A4%91%E0%A4%9F%E0%A5%8B%E0%A4%AE%E0%A5%8B%E0%A4%AC%E0%A4%BE%E0%A4%87%E0%A4%B2%20%E0%A4%8F%E0%A4%82%E0%A4%A1%20%E0%A4%9F%E0%A5%82%E0%A4%B0%20%E0%A4%8F%E0%A4%82%E0%A4%A1%20%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%88%E0%A4%B5%E0%A4%B2%E0%A5%8D%E0%A4%B8%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%B8%E0%A5%87%E0%A4%B5%E0%A4%BE%20%E0%A4%95%E0%A5%87%20%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F%E0%A5%A4" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-200/80 hover:border-emerald-500 transition">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-2xl shrink-0">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-500">व्हाट्सएप बुकिंग एवं सहायता</p>
+                            <p class="text-lg sm:text-xl font-extrabold text-navy-900">+91 9027722102</p>
+                        </div>
+                    </a>
+
+                    <!-- Address Card -->
+                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-sm border border-slate-200/80">
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-brandOrange-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold text-slate-500">हमारा पता</p>
+                            <p class="text-base sm:text-lg font-bold text-navy-900">प्रिया ऑटोमोबाइल एंड टूर एंड ट्रैवल्स</p>
+                            <p class="text-sm text-slate-600">हल्द्वानी, जिला नैनीताल, उत्तराखंड</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Interactive WhatsApp Booking Form -->
+            <div class="lg:col-span-7">
+                <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100">
+                    <div class="mb-6">
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-navy-900">
+                            त्वरित बुकिंग / पूछताछ फॉर्म
+                        </h3>
+                        <p class="text-sm text-slate-500 mt-1">
+                            अपना विवरण भरें — बटन दबाते ही आपका संदेश सीधे हमारे व्हाट्सएप (9027722102) पर तैयार हो जाएगा।
+                        </p>
+                    </div>
+
+                    <form id="whatsapp-booking-form" class="space-y-5">
+                        <!-- Service Type -->
+                        <div>
+                            <label for="service-type" class="block text-sm font-bold text-navy-900 mb-2">
+                                सेवा चुनें <span class="text-red-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <select id="service-type" required class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-brandOrange-500 focus:border-brandOrange-500 appearance-none">
+                                    <option value="टू-व्हीलर सर्विसिंग और रिपेयरिंग">टू-व्हीलर सर्विसिंग और रिपेयरिंग (बाइक / स्कूटर)</option>
+                                    <option value="कार वॉशिंग और क्लीनिंग">कार वॉशिंग और क्लीनिंग (कार / बाइक वॉश)</option>
+                                    <option value="24/7 कार रेंटल और टूर एंड ट्रैवल्स">24/7 कार रेंटल और टूर एंड ट्रैवल्स (टैक्सी / टूर)</option>
+                                    <option value="मोटर इंश्योरेंस सेवाएं">मोटर इंश्योरेंस सेवाएं (नया बीमा / रिन्यूअल)</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                    <i class="fa-solid fa-chevron-down text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Name & Phone Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="customer-name" class="block text-sm font-bold text-navy-900 mb-2">
+                                    आपका पूरा नाम <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="customer-name" required placeholder="उदा. राजेश जोशी" class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brandOrange-500 focus:border-brandOrange-500">
+                            </div>
+
+                            <div>
+                                <label for="customer-phone" class="block text-sm font-bold text-navy-900 mb-2">
+                                    मोबाइल नं
